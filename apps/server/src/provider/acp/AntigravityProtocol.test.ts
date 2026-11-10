@@ -31,6 +31,8 @@ describe("native Antigravity subagent tools", () => {
       "Run start_subagent?",
       "Running invoke_subagent",
       "Run invoke_subagent?",
+      // agy CLI 1.5.3+ titles auto-approved launches without the question mark.
+      "Run invoke_subagent",
     ]) {
       expect(classifyAntigravitySubagentToolCall({ ...toolCall, title }, {})).toBe("subagent");
       expect(

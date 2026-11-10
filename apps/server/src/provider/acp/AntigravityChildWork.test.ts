@@ -140,6 +140,14 @@ it.layer(NodeServices.layer)("readAntigravityChildWork", (it) => {
       const stored = antigravitySubagentLaunches(
         sanitizeAntigravityToolPayload({ Subagents: [{ Role: long.role, Prompt: long.prompt }] }),
       );
+      // agy CLI 1.5.3+ passes one subagent as a flat object.
+      expect(
+        antigravitySubagentLaunches({
+          TypeName: "research",
+          Role: LAUNCH.role,
+          Prompt: LAUNCH.prompt,
+        }),
+      ).toEqual([LAUNCH]);
       const longMatch = yield* read(profile, opaque, describeAntigravitySubagentLaunches(stored!));
       expect(longMatch.map((child) => child.prompt)).toEqual([long.prompt]);
       expect(

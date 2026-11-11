@@ -7,12 +7,12 @@ import {
   FlatList,
   Platform,
   Pressable,
-  RefreshControl,
   ScrollView,
   Text as NativeText,
   useWindowDimensions,
   View,
 } from "react-native";
+import { RefreshControl } from "../../components/ui/RefreshControl";
 import { WebView } from "react-native-webview";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AppText as Text } from "../../components/ui/AppText";
